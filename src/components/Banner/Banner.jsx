@@ -1,57 +1,49 @@
 import React from "react"
 import styles from "./banner.module.css"
 
-export default function Banner ({ children, status }){
+export default function Banner ({ status, title, text, maxWidth}){
 
-    let title
-    let content = []
-    let defaultMessage = false
+    let defaultTitle = false
+    let wrongStatus
+    let isEmptyStringTitle
+    let isEmptyStringText
 
-    children === undefined ? defaultMessage = true : content = children
-
-    if (defaultMessage === true || content === ![] && content[0].props.children === undefined) {
-        switch(status){
-            case "success":
-                title = "Congratulations!";
-                break;
-            case "warning":
-                title = "Attention";
-                break;
-            case "error":
-                title = "There is a problem with your application";
-                break;
-            case "neutral":
-                title = "Update available";
-                break;
-            default:
-                return (
-                    console.log("aqui")
-                )
-        }
-    } else {
-        title = content[0]
+    switch(status) {
+        case "success":
+            defaultTitle = "Congratulations!";
+            break;
+        case "warning":
+            defaultTitle = "Attention";
+            break;
+        case "error":
+            defaultTitle = "There is a problem with your application";
+            break;
+        case "neutral":
+            defaultTitle = "Update available";
+            break;
+        default:
+            wrongStatus = "please provide a default status"
+            status = ""
     }
 
-
-
-
-    if (React.isValidElement(content)){
-        title = content.props.children
-    } 
-
-    if (typeof content === "string"){
-        title = content
+    if (title){
+        isEmptyStringTitle = title.trim() === "" ? true : false
     }
-    
+
+    if (text){
+        isEmptyStringText = text.trim() === "" ? true : false
+    }
+
+    console.log(maxWidth)
 
     return (
         <>
-            <div className={`${styles.banner} ${styles[status]}`}>
+            <div className={`${styles.banner} ${styles[status]}`} style={{maxWidth: `${maxWidth}`}}>
                 <div className={`${styles.title}`}>
-                    <img src={`${status}.png`} alt={`${status} icon`}/>
-                    <p>{title}</p>
+                    {status && <img src={`${status}.png`} alt={`${status} icon`}/>}
+                    {wrongStatus ? <p> {wrongStatus}</p> : <p>{title && !isEmptyStringTitle ? title : defaultTitle}</p>}
                 </div>
-                {typeof content === "object" && content[1] && <p>{content[1]}</p>}
+                {text && !isEmptyStringText && <p>{text}</p>}
             </div>
         </>
     )

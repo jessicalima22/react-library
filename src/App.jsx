@@ -20,21 +20,16 @@ function App() {
         <Badge color="indigo">!</Badge>
       </div>
       <div>
-        <Banner status="success" >
-          <span>You don't need to write anything, but...</span>
-        </Banner>
+        <Banner status="success" title="You don't need to write anything, but..."/>
         <Banner status="warning"/>
-        <Banner status="error">
-          <span> ...If you don't write a title,</span>
-          <span>you'll see that...</span>
+        <Banner status="error" title="...If you don't write a title," text="you'll see that..."/>
+        <Banner status="success"/>
+        <Banner 
+          status="neutral" 
+          title="... we'll set the default one for you!" 
+          text="Then you don't even need to worry ^^ ">
         </Banner>
-        <Banner status="success" />
-        <Banner status="neutral">
-          <span>... we'll set the default one for you!</span>
-          <span>Then you don't even need to worry ^^ </span>
-        </Banner>
-        <Banner status="neutrallS">i2hfiuhfquihoiyyyyyyyyy</Banner>
-        
+        <Banner status="neutral" title="   t       " text="  u oi" maxWidth="100px"/>
       </div>
     </>
   )
