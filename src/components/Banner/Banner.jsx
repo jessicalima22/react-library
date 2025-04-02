@@ -1,7 +1,8 @@
 import React from "react"
 import styles from "./banner.module.css"
 
-export default function Banner ({ status, title, text, maxWidth}){
+export default function Banner ({ status, title, text, maxWidth }){
+   
 
     let defaultTitle = false
     let wrongStatus
@@ -33,8 +34,6 @@ export default function Banner ({ status, title, text, maxWidth}){
     if (text){
         isEmptyStringText = text.trim() === "" ? true : false
     }
-
-    console.log(maxWidth)
 
     return (
         <>

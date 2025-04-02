@@ -29,7 +29,7 @@ function App() {
           title="... we'll set the default one for you!" 
           text="Then you don't even need to worry ^^ ">
         </Banner>
-        <Banner status="neutral" title="   t       " text="  u oi" maxWidth="100px"/>
+        <Banner status="success" title="max width test" text="working!" maxWidth="150px"/>
       </div>
     </>
   )
