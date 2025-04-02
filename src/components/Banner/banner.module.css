@@ -1,0 +1,47 @@
+body {
+    font-weight: 400;
+}
+
+.banner {
+    font-size: 14px;
+    max-width: 896px;
+    padding: 1.1em;
+    border-radius: 0.43em;
+    margin: 2em auto;
+}
+
+.banner > p {
+    padding: 0.8em 2em 0.1em 2.3em;
+}
+
+.title > p {
+    padding: 0 0.9em;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-weight: 700; 
+}
+
+.success {
+    color: #047857;
+    background-color: #ECFDF5;
+}
+
+.warning {
+    color: #92400E;
+    background-color: #FFFBEB;
+
+}
+
+.error {
+    color: #92400E;
+    background-color: #FEF2F2;
+
+}
+
+.neutral {
+    color: #1E40AF;
+    background-color: #EFF6FF;
+}
